@@ -1,9 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
-import YTMusicClient from "./services/ytmusicClient";
-
+const cors = require("cors");
 dotenv.config();
 const app = express();
+app.use(cors());
 require("./startup/routes")(app);
 
 const PORT = process.env.PORT || 5000;
